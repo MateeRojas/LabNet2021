@@ -1,0 +1,11 @@
+using System;
+ 
+namespace HelloMundo
+{
+    class Hola {         
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hola Lab! Espero que todxs ingresemos a la empresa!");
+        }
+    }
+}
