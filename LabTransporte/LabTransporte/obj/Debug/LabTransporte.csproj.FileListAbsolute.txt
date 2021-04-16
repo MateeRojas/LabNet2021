@@ -1,0 +1,7 @@
+C:\Users\User\source\repos\LabTransporte\LabTransporte\bin\Debug\LabTransporte.exe.config
+C:\Users\User\source\repos\LabTransporte\LabTransporte\bin\Debug\LabTransporte.exe
+C:\Users\User\source\repos\LabTransporte\LabTransporte\bin\Debug\LabTransporte.pdb
+C:\Users\User\source\repos\LabTransporte\LabTransporte\obj\Debug\LabTransporte.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\LabTransporte\LabTransporte\obj\Debug\LabTransporte.exe
+C:\Users\User\source\repos\LabTransporte\LabTransporte\obj\Debug\LabTransporte.pdb
+C:\Users\User\source\repos\LabTransporte\LabTransporte\obj\Debug\LabTransporte.csprojAssemblyReference.cache
