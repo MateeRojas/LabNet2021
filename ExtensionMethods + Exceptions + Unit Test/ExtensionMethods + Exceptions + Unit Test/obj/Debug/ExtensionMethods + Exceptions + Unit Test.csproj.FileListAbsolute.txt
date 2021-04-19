@@ -1,0 +1,7 @@
+C:\Users\User\source\repos\ExtensionMethods + Exceptions + Unit Test\ExtensionMethods + Exceptions + Unit Test\bin\Debug\ExtensionMethods + Exceptions + Unit Test.exe.config
+C:\Users\User\source\repos\ExtensionMethods + Exceptions + Unit Test\ExtensionMethods + Exceptions + Unit Test\bin\Debug\ExtensionMethods + Exceptions + Unit Test.exe
+C:\Users\User\source\repos\ExtensionMethods + Exceptions + Unit Test\ExtensionMethods + Exceptions + Unit Test\bin\Debug\ExtensionMethods + Exceptions + Unit Test.pdb
+C:\Users\User\source\repos\ExtensionMethods + Exceptions + Unit Test\ExtensionMethods + Exceptions + Unit Test\obj\Debug\ExtensionMethods + Exceptions + Unit Test.csprojAssemblyReference.cache
+C:\Users\User\source\repos\ExtensionMethods + Exceptions + Unit Test\ExtensionMethods + Exceptions + Unit Test\obj\Debug\ExtensionMethods + Exceptions + Unit Test.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\ExtensionMethods + Exceptions + Unit Test\ExtensionMethods + Exceptions + Unit Test\obj\Debug\ExtensionMethods + Exceptions + Unit Test.exe
+C:\Users\User\source\repos\ExtensionMethods + Exceptions + Unit Test\ExtensionMethods + Exceptions + Unit Test\obj\Debug\ExtensionMethods + Exceptions + Unit Test.pdb
