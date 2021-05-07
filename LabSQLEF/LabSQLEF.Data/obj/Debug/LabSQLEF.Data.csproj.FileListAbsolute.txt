@@ -1,0 +1,15 @@
+C:\Users\User\source\repos\LabSQLEF\LabSQLEF.Data\bin\Debug\LabSQLEF.Data.dll.config
+C:\Users\User\source\repos\LabSQLEF\LabSQLEF.Data\bin\Debug\LabSQLEF.Data.dll
+C:\Users\User\source\repos\LabSQLEF\LabSQLEF.Data\bin\Debug\LabSQLEF.Data.pdb
+C:\Users\User\source\repos\LabSQLEF\LabSQLEF.Data\bin\Debug\EntityFramework.dll
+C:\Users\User\source\repos\LabSQLEF\LabSQLEF.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\User\source\repos\LabSQLEF\LabSQLEF.Data\bin\Debug\LabSQLEF.Entities.dll
+C:\Users\User\source\repos\LabSQLEF\LabSQLEF.Data\bin\Debug\LabSQLEF.Entities.pdb
+C:\Users\User\source\repos\LabSQLEF\LabSQLEF.Data\bin\Debug\LabSQLEF.Entities.dll.config
+C:\Users\User\source\repos\LabSQLEF\LabSQLEF.Data\bin\Debug\EntityFramework.xml
+C:\Users\User\source\repos\LabSQLEF\LabSQLEF.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\User\source\repos\LabSQLEF\LabSQLEF.Data\obj\Debug\LabSQLEF.Data.csprojAssemblyReference.cache
+C:\Users\User\source\repos\LabSQLEF\LabSQLEF.Data\obj\Debug\LabSQLEF.Data.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\LabSQLEF\LabSQLEF.Data\obj\Debug\LabSQLEF.Data.csproj.CopyComplete
+C:\Users\User\source\repos\LabSQLEF\LabSQLEF.Data\obj\Debug\LabSQLEF.Data.dll
+C:\Users\User\source\repos\LabSQLEF\LabSQLEF.Data\obj\Debug\LabSQLEF.Data.pdb

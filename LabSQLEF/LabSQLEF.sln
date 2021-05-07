@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabSQLEF.Data", "LabSQLEF.D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabSQLEF.Entities", "LabSQLEF.Entities\LabSQLEF.Entities.csproj", "{3018BC19-0418-4D57-9B7B-FCF0C5B1EE24}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabSQLEF.MVC", "LabSQLEF.MVC\LabSQLEF.MVC.csproj", "{F048477D-F3AF-451D-BC4B-01C07E0C6011}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{3018BC19-0418-4D57-9B7B-FCF0C5B1EE24}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3018BC19-0418-4D57-9B7B-FCF0C5B1EE24}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3018BC19-0418-4D57-9B7B-FCF0C5B1EE24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F048477D-F3AF-451D-BC4B-01C07E0C6011}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F048477D-F3AF-451D-BC4B-01C07E0C6011}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F048477D-F3AF-451D-BC4B-01C07E0C6011}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F048477D-F3AF-451D-BC4B-01C07E0C6011}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,14 @@
+﻿@model LabSQLEF.MVC.Models.EmployeesView
+@{
+    ViewBag.Title = "Empleados";
+}
+
+<h1>Actualizar Empleado</h1>
+
+@using (Html.BeginForm("Update", "Employees", FormMethod.Post))
+{
+    <label>Id:</label> @Html.TextBoxFor(e => e.ID);
+    <label>Nueva Ciudad:</label> @Html.TextBoxFor(e => e.City);
+    <label>Nuevo País:</label> @Html.TextBoxFor(e => e.Country);
+    <input type="submit" class="btn btn-dark" value="Guardar"/>
+}

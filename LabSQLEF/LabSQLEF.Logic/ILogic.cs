@@ -12,5 +12,6 @@ namespace LabSQLEF.Logic
         void Add(T newItem);
         void Update(T newItem);
         void Delete(H id);
+        T Find(H id);
     }
 }

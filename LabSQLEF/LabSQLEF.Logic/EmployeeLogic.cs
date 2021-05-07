@@ -25,13 +25,17 @@ namespace LabSQLEF.Logic
         public void Update(Employees emp)
         {
             var toUpdate = context.Employees.Find(emp.EmployeeID);
-            toUpdate.City = emp.City;
-            toUpdate.Address = emp.Address;
-            toUpdate.Country = emp.Country;
-            toUpdate.HomePhone = emp.HomePhone;
-            toUpdate.Region = emp.Region;
+                toUpdate.City = emp.City;
+                toUpdate.Address = emp.Address;
+                toUpdate.Country = emp.Country;
+                toUpdate.HomePhone = emp.HomePhone;
+                toUpdate.Region = emp.Region;
+                context.SaveChanges();
+        }
 
-            context.SaveChanges();
+        public Employees Find(int id)
+        {
+            return context.Employees.Find(id);
         }
 
         public void Delete(int id)
