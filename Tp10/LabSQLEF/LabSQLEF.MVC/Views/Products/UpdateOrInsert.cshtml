@@ -1,0 +1,17 @@
+﻿@model LabSQLEF.MVC.Models.ProductsView
+@{
+    ViewBag.Title = "Productos";
+}
+
+<h1>Actualizar o Agregar Producto</h1>
+<h4>Si desea Agregar un nuevo producto, deje el campo -Id- vacío</h4>
+<h4>Si desea Actualizar un producto, indique el id, el nuevo precio y deje el campo -Nombre- vacío</h4>
+
+
+@using (Html.BeginForm("UpdateOrInsert", "Products", FormMethod.Post))
+{
+    <label>Id:</label> @Html.TextBoxFor(p => p.ID);
+    <label>Nombre:</label> @Html.TextBoxFor(p => p.Name);
+    <label>Precio:</label> @Html.TextBoxFor(p => p.Price);
+    <input type="submit" class="btn btn-dark" value="Guardar" />
+}

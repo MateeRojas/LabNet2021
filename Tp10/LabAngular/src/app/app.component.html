@@ -1,0 +1,45 @@
+
+<h1>Lab Angular 2021 - Mateo Rojas</h1>
+<p>En el presente trabajo final de Angular, se consume nuestra WebApi anteriormente creada y se realiza
+  un ABM básico. Como anteriormente había sucedido, se tomó la entidad Employee. Se cuenta con validaciones y manejo
+  de errores en caso de que el usuario realice acciones incorrectas como buscar un ID inexistente o borrar un empleado con
+  dependencias. Por último, se hicieron uso de las funciones de ruteo para mostrar las diferentes vistas. Elegí que la página principal
+  sea directamente el -GetAll- ya que es esl propósito de el ejercicio y quiero que siempre se muestre.
+</p>
+<p><a href="https://github.com/MateeRojas/LabNet2021" class="btn btn-primary btn-lg">Todos los trabajos &raquo;</a></p>
+
+<router-outlet></router-outlet>
+<div class="col text-center">
+  <a routerLink= "/agregar" routerLinkActive = "active" class="btn btn-secondary btn-lg">Agregar Empleado</a>
+ <a routerLink= "/actualizar" routerLinkActive = "active" class="btn btn-secondary btn-lg">Actualizar Empleado</a>
+  <a routerLink= "/borrar" routerLinkActive = "active" class="btn btn-secondary btn-lg">Borrar Empleado</a>
+  
+</div>
+
+<h2>Empleados</h2>
+<table class="table table-hover table-bordered thead-light table-striped ">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Ciudad</th>
+        <th scope="col">País</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees; let item=index">
+        <td>{{employee.EmployeeID}}</td>
+        <td>{{employee.LastName}}</td>
+        <td>{{employee.FirstName}}</td>
+        <td>{{employee.City}}</td>
+        <td>{{employee.Country}}</td>
+      </tr>
+      
+  </table>
+
+  <footer>
+    <br><hr>
+    <p>Mateo Rojas 2021</p><br>
+    
+  </footer>

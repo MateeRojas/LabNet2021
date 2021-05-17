@@ -1,0 +1,23 @@
+﻿@model LabSQLEF.MVC.Models.EmployeesView
+@{
+    ViewBag.Title = "Empleados";
+}
+
+<h1>Actualizar o Agregar Empleado</h1>
+<h4>Si desea Agregar un nuevo empleado, deje el campo -Id- vacío</h4>
+<h4>Si desea Actualizar un empleado, indique el id, la nueva cuidad y el nuevo país. Deje los campos -Nombre- y -Apellido- vacíos</h4>
+
+@using (Html.BeginForm("UpdateOrInsert", "Employees", FormMethod.Post))
+{
+    <label>Id:</label><br>
+    @Html.TextBoxFor(e => e.ID);<br>
+    <label>Nombre(s):</label><br>
+    @Html.TextBoxFor(e => e.Name);<br>
+    <label>Apellido(s):</label><br>
+    @Html.TextBoxFor(e => e.LastName);<br>
+    <label>Ciudad:</label><br>
+    @Html.TextBoxFor(e => e.City);<br>
+    <label>País:</label><br>
+    @Html.TextBoxFor(e => e.Country);<br>
+    <input type="submit" class="btn btn-dark" value="Guardar" />
+}

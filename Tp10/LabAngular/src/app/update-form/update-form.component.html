@@ -1,0 +1,16 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label class="col-form-label">ID:</label>
+        <input formControlName="id" type="number" class="form-control">
+    </div>
+    <div class="form-group">
+        <label class="col-form-label">Nueva Ciudad</label>
+        <input formControlName="ciudad" type="text" class="form-control" maxlength="15">
+    </div>
+    <div class="form-group">
+        <label class="col-form-label">Nuevo País</label>
+        <input formControlName="pais" type="text" class="form-control" maxlength="15">
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="this.form.invalid">Guardar</button>
+    <button type="button" class="btn btn-primary" (click)="onClickLimpiar()">Limpiar</button>
+</form>
