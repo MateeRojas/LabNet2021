@@ -8,111 +8,92 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
-using LabSQLEFWeb.Models;
+using System.Web.Http.Cors;
+using LabSQLEF.Logic;
 
 namespace LabSQLEFWeb.Controllers
 {
+    
+
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class EmployeesController : ApiController
     {
-        private NorthwindEntities db = new NorthwindEntities();
+       
+        private EmployeeLogic emp = new EmployeeLogic();
 
-        // GET: api/Employees
-        public IQueryable<Employees> GetEmployees()
+        
+        public List<LabSQLEF.Entities.Employees> GetEmployees()
         {
-            return db.Employees;
-        }
-
-        // GET: api/Employees/5
-        [ResponseType(typeof(Employees))]
-        public IHttpActionResult GetEmployees(int id)
-        {
-            Employees employees = db.Employees.Find(id);
-            if (employees == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(employees);
-        }
-
-        // PUT: api/Employees/5
-        [ResponseType(typeof(void))]
-        public IHttpActionResult PutEmployees(int id, Employees employees)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            if (id != employees.EmployeeID)
-            {
-                return BadRequest();
-            }
-
-            db.Entry(employees).State = EntityState.Modified;
-
             try
             {
-                db.SaveChanges();
+                return emp.GetAll();
             }
-            catch (DbUpdateConcurrencyException)
+            catch(Exception ex)
             {
-                if (!EmployeesExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                NotFound();
+                return null;
             }
-
-            return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Employees
-        [ResponseType(typeof(Employees))]
-        public IHttpActionResult PostEmployees(Employees employees)
+        
+        
+       
+        public IHttpActionResult GetEmployees(int id)
         {
-            if (!ModelState.IsValid)
+            List<LabSQLEF.Entities.Employees> employees = emp.GetAll();
+            var result = employees.FirstOrDefault(e => e.EmployeeID == id);
+            if (result == null)
             {
-                return BadRequest(ModelState);
+                return NotFound();
             }
-
-            db.Employees.Add(employees);
-            db.SaveChanges();
-
-            return CreatedAtRoute("DefaultApi", new { id = employees.EmployeeID }, employees);
+            return Ok(result);    
         }
 
-        // DELETE: api/Employees/5
-        [ResponseType(typeof(Employees))]
-        public IHttpActionResult DeleteEmployees(int id)
+        
+        public IHttpActionResult PutEmployees(LabSQLEF.Entities.Employees employees)
         {
-            Employees employees = db.Employees.Find(id);
-            if (employees == null)
+            try
+            {
+                emp.Update(employees);
+                return Ok();
+            }
+            catch (Exception)
+            {
+                return NotFound();
+            }
+            
+        }
+
+        
+        [HttpPost]
+        public IHttpActionResult PostEmployees(LabSQLEF.Entities.Employees employees)
+        {
+            try
+            {
+                emp.Add(employees);
+                return Ok();
+            }
+            catch(Exception ex)
             {
                 return NotFound();
             }
 
-            db.Employees.Remove(employees);
-            db.SaveChanges();
-
-            return Ok(employees);
         }
 
-        protected override void Dispose(bool disposing)
+        
+        
+        public IHttpActionResult DeleteEmployees(int id)
         {
-            if (disposing)
+            try
             {
-                db.Dispose();
+                emp.Delete(id);
+                return Ok();
             }
-            base.Dispose(disposing);
+            catch(Exception ex)
+            {
+                return NotFound();
+            }
         }
 
-        private bool EmployeesExists(int id)
-        {
-            return db.Employees.Count(e => e.EmployeeID == id) > 0;
-        }
     }
 }

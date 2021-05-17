@@ -127,6 +127,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ApiPublicController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -134,6 +135,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ApiVIew.cs" />
     <Compile Include="Models\EmployeesView.cs" />
     <Compile Include="Models\ProductsView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -179,6 +181,7 @@
     <Content Include="Views\Employees\Index.cshtml" />
     <Content Include="Views\Employees\UpdateOrInsert.cshtml" />
     <Content Include="Views\Employees\Update.cshtml" />
+    <Content Include="Views\ApiPublic\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

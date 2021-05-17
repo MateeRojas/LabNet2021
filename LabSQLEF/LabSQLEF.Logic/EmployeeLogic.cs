@@ -25,7 +25,11 @@ namespace LabSQLEF.Logic
         public void Update(Employees emp)
         {
             var toUpdate = context.Employees.Find(emp.EmployeeID);
-                toUpdate.City = emp.City;
+            if (toUpdate == null)
+            {
+                throw new Exception();
+            }
+            toUpdate.City = emp.City;
                 toUpdate.Address = emp.Address;
                 toUpdate.Country = emp.Country;
                 toUpdate.HomePhone = emp.HomePhone;
@@ -41,6 +45,10 @@ namespace LabSQLEF.Logic
         public void Delete(int id)
         {
             var toDelete = context.Employees.Find(id);
+            if(toDelete == null)
+            {
+                throw new Exception();
+            }
             context.Employees.Remove(toDelete);
             context.SaveChanges();
         }
