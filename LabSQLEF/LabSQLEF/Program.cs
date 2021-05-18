@@ -10,67 +10,141 @@ namespace LabSQLEF
 {
     class Program
     {
-        static void showTerritories(List<Territories> list) {
-            foreach (var item in list)
+        static void Insert()
+        {
+            try
             {
-                Console.WriteLine($"{item.TerritoryID} {item.TerritoryDescription}");
+               ProductLogic prod = new ProductLogic();
+               Console.WriteLine();
+               Console.WriteLine("Inserte nombre del producto");
+               string name = Console.ReadLine();
+                Console.WriteLine("Inserte el precio del pruducto");
+                string priceString = Console.ReadLine();
+                int price = Convert.ToInt32(priceString);
+                prod.Add(new Products
+               {
+                   ProductName = name,
+                   UnitPrice = price,
+               });
+               showProducts(prod.GetAll());
+               Console.WriteLine();
+            }
+            catch(Exception ex)
+            {
+            Console.WriteLine($"Se detectó {ex.Message}");
             }
         }
+        static void Update()
+        {
+            try
+            { 
+                ProductLogic prod = new ProductLogic();
+                Console.WriteLine();
+                Console.WriteLine("Inserte Id del producto a actualizar");
+                string idString = Console.ReadLine();
+                int id = Convert.ToInt32(idString);
+                Console.WriteLine();
+                Console.WriteLine("Inserte el nuevo precio del producto");
+                string priceString = Console.ReadLine();
+                int price = Convert.ToInt32(priceString);
+                prod.Update(new Products
+                {
+                    ProductID = id,
+                    UnitPrice = price
+                });
+                showProducts(prod.GetAll());
+                Console.WriteLine();
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine($"Se detectó {ex.Message}");
+            }
+
+        }
+
+        static void Delete()
+        {
+            try
+            {
+                ProductLogic prod = new ProductLogic();
+                Console.WriteLine();
+                Console.WriteLine("Inserte Id del producto a borrar");
+                string idString = Console.ReadLine();
+                int id = Convert.ToInt32(idString);
+                prod.Delete(id);
+                showProducts(prod.GetAll());
+                Console.WriteLine();
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine($"Se detectó: {ex.Message}");
+            }
+        }
+
+        static void showProducts(List<Products> list) {
+            foreach (var item in list)
+            {
+                Console.WriteLine($"{item.ProductID} {item.ProductName} ${item.UnitPrice}");
+            }
+        }
+
         static void Main(string[] args)
         {
 
             //4)
             Console.WriteLine("Punto 4, muestro la info de productos y empleados");
             Console.WriteLine();
-            Console.WriteLine("Productos:");
             ProductLogic productLogic = new ProductLogic();
-            foreach (Products item in productLogic.GetAll())
-            {
-                Console.WriteLine($"{item.ProductID} {item.ProductName}");  
-            }
-
-            Console.WriteLine();
-            
-            Console.WriteLine("Empleados:");
             EmployeeLogic employeeLogic = new EmployeeLogic();
-            foreach (Employees item in employeeLogic.GetAll())
+            try
             {
-                Console.WriteLine($"{item.EmployeeID} {item.FirstName} {item.LastName}");
+                Console.WriteLine("Productos:");
+               
+                showProducts(productLogic.GetAll());
+       
+
+                Console.WriteLine();
+
+                Console.WriteLine("Empleados:");
+                foreach (Employees item in employeeLogic.GetAll())
+                {
+                    Console.WriteLine($"{item.EmployeeID} {item.FirstName} {item.LastName}");
+                }
+
+                Console.WriteLine();
             }
-
-            Console.WriteLine();
-
+            catch(Exception ex)
+            {
+                Console.WriteLine($"Se detectó {ex.Message}");
+            }
+            
             //5)
             Console.WriteLine("Punto 5, Hacer un insert, update y delete");
             Console.WriteLine();
-            Console.WriteLine("Agrego el Territorio Lomas de Zamora y vemos si cambió:");
-            
-            TerritoryLogic ter = new TerritoryLogic();
-            ter.Add(new Territories
+            Console.WriteLine("Productos:");
+            char choise = 'I';
+            while (choise != 'Q')
             {
-                TerritoryDescription = "Lomas de Zamora",
-                TerritoryID = "85252",
-                RegionID = 2
-            });
-            showTerritories(ter.GetAll());
+                Console.WriteLine("Inserte *I* si desea insertar producto, *U* si desea actualizar un producto, *D* si desea borrar un territoriproducto o *Q* si desea salir del programa");
+                Console.WriteLine();
+                choise = Console.ReadKey().KeyChar;
 
-            Console.WriteLine();
-            Console.WriteLine("Ahora actualizo su descripcion y vemos si cambió:");
-
-            ter.Update(new Territories
-            {
-                TerritoryDescription = "Lomas",
-                TerritoryID = "85252",
-                RegionID = 2
-            });
-            showTerritories(ter.GetAll());
-
-            Console.WriteLine();
-            Console.WriteLine("Por último la elimino y vemos si cambió:");
-
-            ter.Delete("85252");
-            showTerritories(ter.GetAll());
-
+                switch (choise)
+                {
+                    case 'I':
+                        Insert();
+                        break;
+                    case 'U':
+                        Update();
+                        break;
+                    case 'D':
+                        Delete();
+                        break;
+                    default:
+                        Console.WriteLine("Comando Invalido");
+                        break;
+                }
+            }      
             Console.ReadLine();   
             
         }
