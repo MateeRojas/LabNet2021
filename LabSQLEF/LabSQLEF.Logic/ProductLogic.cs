@@ -18,6 +18,7 @@ namespace LabSQLEF.Logic
 
         public List<Products> GetAll()
         {
+            
             return context.Products.ToList();
         }
 
